@@ -1,4 +1,4 @@
-package ACE;
+package WindowBuilder;
 
 import java.awt.EventQueue;
 
@@ -13,9 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class homepage {
+public class Homepage {
 
-	private JFrame frmAceSaliendra;
+	public JFrame mainFr;
 
 	/**
 	 * Launch the application.
@@ -24,8 +24,8 @@ public class homepage {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					homepage window = new homepage();
-					window.frmAceSaliendra.setVisible(true);
+					Homepage window = new Homepage();
+					window.mainFr.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,7 +36,7 @@ public class homepage {
 	/**
 	 * Create the application.
 	 */
-	public homepage() {
+	public Homepage() {
 		initialize();
 	}
 
@@ -44,15 +44,15 @@ public class homepage {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmAceSaliendra = new JFrame();
-		frmAceSaliendra.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 12));
-		frmAceSaliendra.setResizable(false);
-		frmAceSaliendra.setTitle("ACE SALIENDRA - INF224 ");
-		frmAceSaliendra.setBackground(new Color(255, 255, 255));
-		frmAceSaliendra.setBounds(100, 100, 1366, 768);
-		frmAceSaliendra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmAceSaliendra.getContentPane().setLayout(null);
-		frmAceSaliendra.setLocationRelativeTo(null);
+		mainFr = new JFrame();
+		mainFr.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 12));
+		mainFr.setResizable(false);
+		mainFr.setTitle("ACE SALIENDRA - INF224 ");
+		mainFr.setBackground(new Color(255, 255, 255));
+		mainFr.setBounds(100, 100, 1366, 768);
+		mainFr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mainFr.getContentPane().setLayout(null);
+		mainFr.setLocationRelativeTo(null);
 	
 		
 		JLabel AboutMelbl = new JLabel("");
@@ -61,14 +61,14 @@ public class homepage {
 			public void mouseClicked(MouseEvent e) {
 				AboutMe abt1 = new AboutMe();
 				abt1.setVisible(true);
-				frmAceSaliendra.dispose();
+				mainFr.dispose();
 		
 	
 		}
 			
 		});
-		AboutMelbl.setBounds(318, 604, 200, 46);
-		frmAceSaliendra.getContentPane().add(AboutMelbl);
+		AboutMelbl.setBounds(307, 604, 226, 46);
+		mainFr.getContentPane().add(AboutMelbl);
 		
 		JLabel myWorkslbl = new JLabel("");
 		myWorkslbl.addMouseListener(new MouseAdapter() {
@@ -76,11 +76,11 @@ public class homepage {
 			public void mouseClicked(MouseEvent e) {
 				MyWorks myworks = new MyWorks();
 				myworks.setVisible(true);
-				frmAceSaliendra.dispose();
+				mainFr.dispose();
 			}
 		});
-		myWorkslbl.setBounds(585, 604, 194, 46);
-		frmAceSaliendra.getContentPane().add(myWorkslbl);
+		myWorkslbl.setBounds(572, 604, 226, 46);
+		mainFr.getContentPane().add(myWorkslbl);
 		
 		JLabel Contactlbl = new JLabel("");
 		Contactlbl.addMouseListener(new MouseAdapter() {
@@ -88,17 +88,25 @@ public class homepage {
 			public void mouseClicked(MouseEvent e) {
 				Contactinfo mycontact = new Contactinfo();
 				mycontact.setVisible(true);
-				frmAceSaliendra.dispose();
+				mainFr.dispose();
 			}
 			
 		});
-		Contactlbl.setBounds(851, 604, 194, 46);
-		frmAceSaliendra.getContentPane().add(Contactlbl);
+		Contactlbl.setBounds(835, 604, 226, 46);
+		mainFr.getContentPane().add(Contactlbl);
 		
 		JLabel Homepage = new JLabel("");
 		Homepage.setBackground(new Color(249, 249, 249));
-		Homepage.setIcon(new ImageIcon("C:\\Users\\National University\\Downloads\\MicrosoftTeams-image (4).png"));
+		Homepage.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\Home (3).png"));
 		Homepage.setBounds(0, -39, 1366, 768);
-		frmAceSaliendra.getContentPane().add(Homepage);
+		mainFr.getContentPane().add(Homepage);
 	}
+
+	public void setVisible(boolean b) {
+		 this.mainFr.setVisible(true);
+		
+	}
+
+	
+
 }
