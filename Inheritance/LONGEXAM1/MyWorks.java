@@ -45,6 +45,20 @@ public class MyWorks extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel nextbtn = new JLabel("");
+		nextbtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+				Skills skl = new Skills();
+				skl.setVisible(true);
+				
+						
+			}
+		});
+		nextbtn.setBounds(1066, 602, 215, 49);
+		contentPane.add(nextbtn);
+		
 		JLabel backbtn3 = new JLabel("");
 		backbtn3.addMouseListener(new MouseAdapter() {
 			@Override
@@ -58,9 +72,11 @@ public class MyWorks extends JFrame {
 		contentPane.add(backbtn3);
 		
 		JLabel worksLbl = new JLabel("New label");
-		worksLbl.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\Gallery.png"));
+		worksLbl.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\Gallery (1).png"));
 		worksLbl.setBounds(0, -39, 1366, 768);
 		contentPane.add(worksLbl);
+		
+		
 		
 		
 	}
