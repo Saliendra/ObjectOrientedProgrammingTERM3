@@ -1,10 +1,16 @@
-package ACE;
+package WindowBuilder;
+
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Contactinfo extends JFrame {
 
@@ -17,8 +23,8 @@ public class Contactinfo extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Contactinfo frame = new Contactinfo();
-					frame.setVisible(true);
+					Contactinfo frame2 = new Contactinfo();
+					frame2.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -26,9 +32,7 @@ public class Contactinfo extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public Contactinfo() {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -38,6 +42,28 @@ public class Contactinfo extends JFrame {
 		setLocationRelativeTo(null);
 
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel backbtn2 = new JLabel("");
+		backbtn2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+				Homepage mainFr = new Homepage();
+				mainFr.setVisible(true);
+			
+			}
+		});
+		backbtn2.setBounds(83, 600, 218, 51);
+		contentPane.add(backbtn2);
+		
+		JLabel contactLbl = new JLabel("");
+		contactLbl.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\Contact.png"));
+		contactLbl.setHorizontalAlignment(SwingConstants.LEFT);
+		contactLbl.setBounds(0, -39, 1366, 768);
+		contentPane.add(contactLbl);
+		
+		
 	}
 
 }
