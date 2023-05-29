@@ -72,7 +72,7 @@ public class MyWorks extends JFrame {
 		contentPane.add(backbtn3);
 		
 		JLabel worksLbl = new JLabel("New label");
-		worksLbl.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\Gallery (1).png"));
+		worksLbl.setIcon(new ImageIcon(MyWorks.class.getResource("/WindowBuilder/MyWorks.png")));
 		worksLbl.setBounds(0, -39, 1366, 768);
 		contentPane.add(worksLbl);
 		
