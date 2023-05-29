@@ -58,7 +58,7 @@ public class Contactinfo extends JFrame {
 		contentPane.add(backbtn2);
 		
 		JLabel contactLbl = new JLabel("");
-		contactLbl.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\Contact.png"));
+		contactLbl.setIcon(new ImageIcon(Contactinfo.class.getResource("/WindowBuilder/Contact.png")));
 		contactLbl.setHorizontalAlignment(SwingConstants.LEFT);
 		contactLbl.setBounds(0, -39, 1366, 768);
 		contentPane.add(contactLbl);
