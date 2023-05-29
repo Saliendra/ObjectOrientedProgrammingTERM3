@@ -97,8 +97,8 @@ public class Homepage {
 		
 		JLabel Homepage = new JLabel("");
 		Homepage.setBackground(new Color(249, 249, 249));
-		Homepage.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\Home (3).png"));
-		Homepage.setBounds(0, -39, 1366, 768);
+		Homepage.setIcon(new ImageIcon(Homepage.class.getResource("/WindowBuilder/Home.png")));
+		Homepage.setBounds(10, -28, 1366, 768);
 		mainFr.getContentPane().add(Homepage);
 	}
 
