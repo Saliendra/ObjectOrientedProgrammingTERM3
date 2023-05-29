@@ -65,7 +65,7 @@ public class Skills extends JFrame {
 				mainFr.setVisible(true);
 			}
 		});
-		skillsLbl.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\White Black Light Experimental Design - Illustration Portfolio Website.png"));
+		skillsLbl.setIcon(new ImageIcon(Skills.class.getResource("/WindowBuilder/MySkills.png")));
 		skillsLbl.setBounds(0, -39, 1366, 768);
 		getContentPane().add(skillsLbl);
 		
