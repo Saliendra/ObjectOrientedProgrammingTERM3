@@ -1,21 +1,21 @@
 package WindowBuilder;
 
 import java.awt.EventQueue;
-import java.awt.Window;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class AboutMe extends JFrame {
+public class Homepage {
 
-	private JPanel contentPane;
-
+	public JFrame mainFr;
 
 	/**
 	 * Launch the application.
@@ -24,8 +24,8 @@ public class AboutMe extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AboutMe frame1 = new AboutMe();
-					frame1.setVisible(true);
+					Homepage window = new Homepage();
+					window.mainFr.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -34,44 +34,79 @@ public class AboutMe extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the application.
 	 */
-	
-	public AboutMe() {
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setBounds(100, 100, 1366, 768);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		getContentPane().setLayout(null);
-		setLocationRelativeTo(null);
+	public Homepage() {
+		initialize();
+	}
 
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		mainFr = new JFrame();
+		mainFr.setFont(new Font("Berlin Sans FB Demi", Font.PLAIN, 12));
+		mainFr.setResizable(false);
+		mainFr.setTitle("ACE SALIENDRA - INF224 ");
+		mainFr.setBackground(new Color(255, 255, 255));
+		mainFr.setBounds(100, 100, 1366, 768);
+		mainFr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		mainFr.getContentPane().setLayout(null);
+		mainFr.setLocationRelativeTo(null);
+	
 		
-		JLabel backbtn1 = new JLabel("");
-		backbtn1.addMouseListener(new MouseAdapter() {
+		JLabel AboutMelbl = new JLabel("");
+		AboutMelbl.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				dispose();
-				Homepage mainFr = new Homepage();
-				mainFr.setVisible(true);
+				AboutMe abt1 = new AboutMe();
+				abt1.setVisible(true);
+				mainFr.dispose();
+		
+	
+		}
 			
-				
+		});
+		AboutMelbl.setBounds(307, 604, 226, 46);
+		mainFr.getContentPane().add(AboutMelbl);
+		
+		JLabel myWorkslbl = new JLabel("");
+		myWorkslbl.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MyWorks myworks = new MyWorks();
+				myworks.setVisible(true);
+				mainFr.dispose();
 			}
 		});
-		backbtn1.setBounds(111, 579, 220, 49);
-		contentPane.add(backbtn1);
+		myWorkslbl.setBounds(572, 604, 226, 46);
+		mainFr.getContentPane().add(myWorkslbl);
 		
-		JLabel meLbl = new JLabel("");
-		meLbl.setIcon(new ImageIcon("C:\\Users\\salie\\Downloads\\About.png"));
-		meLbl.setHorizontalAlignment(SwingConstants.TRAILING);
-		meLbl.setBounds(0, -39, 1366, 768);
-		contentPane.add(meLbl);
+		JLabel Contactlbl = new JLabel("");
+		Contactlbl.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Contactinfo mycontact = new Contactinfo();
+				mycontact.setVisible(true);
+				mainFr.dispose();
+			}
+			
+		});
+		Contactlbl.setBounds(835, 604, 226, 46);
+		mainFr.getContentPane().add(Contactlbl);
 		
+		JLabel Homepage = new JLabel("");
+		Homepage.setBackground(new Color(249, 249, 249));
+		Homepage.setIcon(new ImageIcon(Homepage.class.getResource("/WindowBuilder/Home.png")));
+		Homepage.setBounds(10, -28, 1366, 768);
+		mainFr.getContentPane().add(Homepage);
+	}
+
+	public void setVisible(boolean b) {
+		 this.mainFr.setVisible(true);
 		
 	}
 
 	
-	
-	}
+
+}
